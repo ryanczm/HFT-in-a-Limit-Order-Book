@@ -1,39 +1,36 @@
-# Avellaneda-Stoikov HFT model implementation
+# High Frequency Trading in a Limit Order Book by Avellaneda & Stoikov 
 
-Avellaneda-Stoikov HFT market making algorithm implementation
+Implements A&S 2006 market-making strategy based on inventory level on sample L2 orderbook data from LOBSTER. 
 
-# Quickstart
+`data_cleaning.ipynb` contains the code where I explore the price levels/queue data for the first 5 bid/ask queues on either side of the book, and estimate $\lambda(\delta)$ and $A$ and $k$ - the parameters for Poisson arrival rates of market
+ orders.
 
-Set up python environment:
-```
-python3 -m virtualenv venv
-#source venv/bin/activate #linux
-venv\Scripts\activate.bat # windows
-```
-Install dependencies:
-```
-pip install -r requirements.txt
-```
-Check model parameters in main.py and then execute the code:
-```
-python main.py
-```
+`main.ipynb` contains the simulation that implements the strategy on the data using the key equations and simulated fill rates for maker quotes.
 
-## Results
+The reservation price: 
 
-Figure 1 show results of a simulation using the following parameters:
-- gamma: 0.1
-- sigma: 2
-- T: 1
-- k: 1.5
-- M: 0.5
+$$r(s,t)=s-q\gamma\sigma^2(T-t)$$
 
-The first chart shows price, indiference price and bid, ask quotes evolution.
-The second chart shows the profit and loss evolution.
-The last chart shows the inventory evolution.
+Optimal quotes:
 
-![Simulation Results](img/simulation01.png "Simulation results")
+$$\delta^a +\delta^b = \gamma \sigma^2(T-t) + \frac{2}{\gamma}\ln(1+\frac{\gamma}{k})$$
 
-Figure 2 shows the distribution of PnL over 1000 simulations.
+Inventory, reservation offset from midprice, distance of quotes to best best and ask:
+<br>
+<p align='center'>
+<img src="img/osc.png" height="300">
+</p align='center'>
 
-![Pnl Histogram](img/pnl_distribution.png "PnL Histogram")
+$A$ and $k$:
+
+<br>
+<p align='center'>
+<img src="img/lehalle2.png" height="300">
+</p align='center'>
+
+Quotes, midprice and reservation price:
+
+<br>
+<p align='center'>
+<img src="img/prices.png" height="300">
+</p align='center'>
