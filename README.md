@@ -18,19 +18,19 @@ $$\delta^a +\delta^b = \gamma \sigma^2(T-t) + \frac{2}{\gamma}\ln(1+\frac{\gamma
 Inventory, reservation offset from midprice, distance of quotes to best best and ask:
 <br>
 <p align='center'>
-<img src="img/osc.png" height="300">
+<img src="img/osc.png" height="330">
 </p align='center'>
 
 $A$ and $k$:
 
 <br>
 <p align='center'>
-<img src="img/lehalle2.png" height="300">
+<img src="img/lehalle2.png" height="330">
 </p align='center'>
 
 Quotes, midprice and reservation price:
 
 <br>
 <p align='center'>
-<img src="img/prices.png" height="300">
+<img src="img/prices.png" height="330">
 </p align='center'>
