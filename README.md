@@ -1,6 +1,6 @@
 # High Frequency Trading in a Limit Order Book by Avellaneda & Stoikov 
 
-Implements A&S 2006 market-making strategy based on inventory level on sample L2 orderbook data from LOBSTER. 
+Implements A&S 2006 market-making strategy based on inventory level on sample L2 orderbook data from LOBSTER. See [https://analytic-musings.com/2024/01/22/hft-in-lob/](https://analytic-musings.com/2024/01/22/hft-in-lob/) for full writeup.
 
 `data_cleaning.ipynb` contains the code where I explore the price levels/queue data for the first 5 bid/ask queues on either side of the book, and estimate $\lambda(\delta)$ and $A$ and $k$ - the parameters for Poisson arrival rates of market
  orders.
